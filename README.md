@@ -35,12 +35,12 @@ realiza el montaje.
 
 ACLARACIONES:
 
-· El método no es el más pragmático, ya que quien ejecuta la orden es el proceso init, y no un 
+- El método no es el más pragmático, ya que quien ejecuta la orden es el proceso init, y no un 
 usuario del sistema, es por ello que es necesario proveer la configuración de los remotes mediante 
 el flag --config tal como se aprecia en el ejemplo.
-· De la misma forma, las variables de entorno aún no están en marcha, y es por ello, que hay que 
+- De la misma forma, las variables de entorno aún no están en marcha, y es por ello, que hay que 
 indicar donde se encuentra el binario rclone para su ejecución.
-· Importante el uso de sleep, porque hasta que en enlace de red no se habilita, no hay acceso a 
+- Importante el uso de sleep, porque hasta que en enlace de red no se habilita, no hay acceso a 
 internet, por tanto el intento de montaje fallaría. Es por ello que he dado un margen de 120 
 segundos desde el arranque del script que hemos editado. Este tiempo puede variar dependiendo del 
 equipo, en mi caso 120 segundos fueron más que suficientes para que funcionara.

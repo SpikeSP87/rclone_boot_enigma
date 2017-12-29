@@ -44,6 +44,8 @@ indicar donde se encuentra el binario rclone para su ejecución.
 internet, por tanto el intento de montaje fallaría. Es por ello que he dado un margen de 120 
 segundos desde el arranque del script que hemos editado. Este tiempo puede variar dependiendo del 
 equipo, en mi caso 120 segundos fueron más que suficientes para que funcionara.
+- IMPRESCINDIBLE el uso de '&' en el comando de montaje, para que el montaje no se apropie del 
+proceso init, y se ejecute en segundo plano. 
 
 Cuando tenga testeado el script de automontaje propio, se podrá realizar la programación del 
 automontaje mediante cron, y será mucho más sencillo. En cuanto lo tenga, modificaré este 

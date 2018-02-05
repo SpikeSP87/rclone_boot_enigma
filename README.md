@@ -40,10 +40,10 @@ usuario del sistema, es por ello que es necesario proveer la configuración de l
 el flag --config tal como se aprecia en el ejemplo.
 - De la misma forma, las variables de entorno aún no están en marcha, y es por ello, que hay que 
 indicar donde se encuentra el binario rclone para su ejecución.
-- Importante el uso de sleep, porque hasta que en enlace de red no se habilita, no hay acceso a 
+- Importante el uso de sleep, porque hasta que el enlace de red no se habilita, no hay acceso a 
 internet, por tanto el intento de montaje fallaría. Es por ello que he dado un margen de 120 
-segundos desde el arranque del script que hemos editado. Este tiempo puede variar dependiendo del 
-equipo, en mi caso 120 segundos fueron más que suficientes para que funcionara.
+segundos desde el arranque del script que hemos creado. Este tiempo puede variar dependiendo del 
+equipo, en mi caso 120 segundos fueron más que suficientes para que funcionara, pero podéis hacer pruebas para reducir este tiempo.
 - IMPRESCINDIBLE el uso de '&' en el comando de montaje, para que el montaje no se apropie del 
 proceso init, y se ejecute en segundo plano. 
 

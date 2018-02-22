@@ -25,12 +25,15 @@ general '/home/nombre_usuario/.config/rclone/rclone.conf'. Así y a modo ejemplo
 fichero: 'cp /home/nombre_usuario/.config/rclone/rclone.conf /remotes'
 3. Nos aseguramos de que el directorio sea accesible por todos los usuarios, y el fichero 
 rclone.conf también.
-4. Verificado lo anterior, editamos el fichero con el editor que creamos oportuno: 
+4. Editamos el fichero /usr/bin/enigma2.sh y buscamos el siguiente código: 'if [ -x /usr/bin/enigma2_pre_start.sh ]; then
+        /usr/bin/enigma2_pre_start.sh' para añadir un & y dejarlo así: 'if [ -x /usr/bin/enigma2_pre_start.sh ]; then
+        /usr/bin/enigma2_pre_start.sh &'
+5. Verificado lo anterior, editamos el fichero con el editor que creamos oportuno: 
 '/usr/bin/enigma2_pre_start.sh'
-5. Añadimos en el fichero: 'sleep 120'
-6. A continuación la cadena de montaje de nuestro remote. Por ejemplo: '/usr/bin/rclone --config 
+6. Añadimos en el fichero: 'sleep 120'
+7. A continuación la cadena de montaje de nuestro remote. Por ejemplo: '/usr/bin/rclone --config 
 "/remotes/rclone.conf" --tpslimit 6 mount --allow-other --read-only remote1:/ /mnt/remote1 &'
-7. Guardamos el fichero y listo. Ya podremos realizar el reinicio del sistema para comprobar si se 
+8. Guardamos el fichero y listo. Ya podremos realizar el reinicio del sistema para comprobar si se 
 realiza el montaje.
 
 ACLARACIONES:

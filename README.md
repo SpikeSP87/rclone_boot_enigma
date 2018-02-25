@@ -1,5 +1,17 @@
 # rclone_boot_enigma
+METODO PRAGMATICO
+-----------------
+Como rclone es una herramienta que depende en cierto modo del entorno de un usuario, es más conveniente tal vez realizar el montaje mediante el script de automontaje.
 
+Como usarlo es básicamente seguir las instrucciones de su guía:
+1. Descargarlo del repositorio, dar permisos.
+2. Configurar el script junto al fichero de remoteslist.
+3. Programarlo en cron.
+
+No obstante, mantengo la antigua forma, ya que no solo es útil para iniciar rclone, si no para tener una forma de añadir acciones en el arranque del sistema.
+
+METODO VIEJA ESCUELA
+--------------------
 A continuación se va a explicar una forma de realizar el automontaje de un remote con 
 rclone en el arranque de un sistema basado en Enigma2.
 
@@ -25,14 +37,14 @@ general '/home/nombre_usuario/.config/rclone/rclone.conf'. Así y a modo ejemplo
 fichero: 'cp /home/nombre_usuario/.config/rclone/rclone.conf /remotes'
 3. Nos aseguramos de que el directorio sea accesible por todos los usuarios, y el fichero 
 rclone.conf también.
-4. Editamos el fichero /usr/bin/enigma2.sh y buscamos el siguiente código: 'if [ -x /usr/bin/enigma2_pre_start.sh ]; then
-        /usr/bin/enigma2_pre_start.sh' para añadir un & y dejarlo así: 'if [ -x /usr/bin/enigma2_pre_start.sh ]; then
-        /usr/bin/enigma2_pre_start.sh &'
+4. Editamos el fichero /usr/bin/enigma2.sh y buscamos el siguiente código: `if [ -x /usr/bin/enigma2_pre_start.sh ]; then
+        /usr/bin/enigma2_pre_start.sh` para añadir un & y dejarlo así: `if [ -x /usr/bin/enigma2_pre_start.sh ]; then
+        /usr/bin/enigma2_pre_start.sh &`
 5. Verificado lo anterior, editamos el fichero con el editor que creamos oportuno: 
-'/usr/bin/enigma2_pre_start.sh'
-6. Añadimos en el fichero: 'sleep 120'
-7. A continuación la cadena de montaje de nuestro remote. Por ejemplo: '/usr/bin/rclone --config 
-"/remotes/rclone.conf" --tpslimit 6 mount --allow-other --read-only remote1:/ /mnt/remote1 &'
+`/usr/bin/enigma2_pre_start.sh`
+6. Añadimos en el fichero: `sleep 120`
+7. A continuación la cadena de montaje de nuestro remote. Por ejemplo: `/usr/bin/rclone --config 
+"/remotes/rclone.conf" --tpslimit 6 mount --allow-other --read-only remote1:/ /mnt/remote1 &`
 8. Guardamos el fichero y listo. Ya podremos realizar el reinicio del sistema para comprobar si se 
 realiza el montaje.
 
